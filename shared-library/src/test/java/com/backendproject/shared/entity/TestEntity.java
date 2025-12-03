@@ -1,16 +1,20 @@
 package com.backendproject.shared.entity;
 
+// JPA Imports (needed for @Entity)
 import jakarta.persistence.Entity;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-/**
- * A simple concrete class extending BaseEntity for unit testing purposes.
- * We include the @Entity annotation just to satisfy JPA conventions in the test context.
- */
-@Entity
+// Lombok Imports
+import lombok.Data; // Provides @Getter, @Setter, @EqualsAndHashCode, @ToString
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
+@Entity // <--- Add this import!
+@Data // <--- Replaces individual @Getter, @Setter, @ToString, @EqualsAndHashCode
 @NoArgsConstructor
-@ToString(callSuper = true)
+@AllArgsConstructor
+// Ensure TestEntity extends BaseEntity
 public class TestEntity extends BaseEntity {
-    // No fields needed here, we just test the inherited fields
+
+    // Test fields if needed, otherwise leave blank.
+    // The class is intentionally simple to test the parent.
 }
