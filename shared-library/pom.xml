@@ -8,6 +8,7 @@
         <groupId>com.backendproject</groupId>
         <artifactId>backend-project-final</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>shared-library</artifactId>
