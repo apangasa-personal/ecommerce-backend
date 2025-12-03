@@ -1,1 +1,3 @@
+com/backendproject/shared/dto/ApiResponse.class
 com/backendproject/shared/entity/BaseEntity.class
+com/backendproject/shared/exception/ResourceNotFoundException.class

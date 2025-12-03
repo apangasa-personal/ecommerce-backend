@@ -1,2 +1,4 @@
 com/backendproject/shared/entity/BaseEntityTest.class
+com/backendproject/shared/dto/ApiResponseTest.class
 com/backendproject/shared/entity/TestEntity.class
+com/backendproject/shared/exception/ResourceNotFoundExceptionTest.class
