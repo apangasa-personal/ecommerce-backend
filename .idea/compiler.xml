@@ -6,10 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="catalogue-service" />
+        <module name="shared-library" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ecommerce-backend-final" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>

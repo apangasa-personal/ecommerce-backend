@@ -1,64 +1,38 @@
 package com.backendproject.shared.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.LastModifiedBy;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.EqualsAndHashCode;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.time.Instant;
 import java.util.UUID;
 
+@MappedSuperclass
 @Getter
 @Setter
-@MappedSuperclass
-public abstract class BaseEntity implements Serializable {
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder(toBuilder = true)
+public abstract class BaseEntity {
 
     @Id
-    @GeneratedValue(generator = "UUID")
-    @Column(name = "id", updatable = false, nullable = false)
-    @EqualsAndHashCode.Include
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @CreationTimestamp
-    @Column(name = "created_at", nullable = false, updatable = false)
-    private Instant createdAt;
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt;
 
-    @UpdateTimestamp
-    @Column(name = "updated_at", nullable = false)
-    private Instant updatedAt;
-
-    @CreatedBy
-    @Column(name = "created_by", updatable = false)
-    private String createdBy;
-
-    @LastModifiedBy
-    @Column(name = "updated_by")
-    private String updatedBy;
+    @Column(nullable = false)
+    private LocalDateTime updatedAt;
 
     @PrePersist
     protected void onCreate() {
-        if (createdAt == null) {
-            createdAt = Instant.now();
-        }
-        if (updatedAt == null) {
-            updatedAt = Instant.now();
-        }
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        updatedAt = Instant.now();
+        this.updatedAt = LocalDateTime.now();
     }
 }
