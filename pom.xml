@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.backendproject</groupId>
-    <artifactId>backend-project-final</artifactId>
+    <artifactId>ecommerce-backend-final</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -14,6 +14,7 @@
     <modules>
         <module>shared-library</module>
         <module>catalogue-service</module>
+        <module>auth-service</module>
     </modules>
 
     <properties>

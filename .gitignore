@@ -5,3 +5,4 @@
 /shared-library/target/
 /shared-library/target/
 /shared-library/target/surefire-reports/
+/auth-service/target/
