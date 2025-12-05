@@ -1,2 +1,7 @@
 /catalogue-service/target/
 /shared-library/target/
+/shared-library/target/
+/.idea/
+/shared-library/target/
+/shared-library/target/
+/shared-library/target/surefire-reports/

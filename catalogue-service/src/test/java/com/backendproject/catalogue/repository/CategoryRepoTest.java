@@ -4,7 +4,8 @@ import com.backendproject.catalogue.entity.Category;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.Import;
+
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -17,11 +18,18 @@ class CategoryRepoTest {
     @Test
     void shouldSaveAndFindCategoryBySlug() {
         Category category = new Category();
-        category.setTitle("Fruits");
-        category.setSlug("fruits");
+        category.setSlug("electronics");
+        category.setTitle("Electronics");
+        categoryRepo.save(category);
 
-        Category saved = categoryRepo.save(category);
-        assertThat(saved.getId()).isNotNull();
-        assertThat(categoryRepo.findById(saved.getId())).isPresent();
+        Optional<Category> found = categoryRepo.findBySlug("electronics");
+        assertThat(found).isPresent();
+        assertThat(found.get().getTitle()).isEqualTo("Electronics");
+    }
+
+    @Test
+    void shouldNotFindCategoryWithInvalidSlug() {
+        Optional<Category> found = categoryRepo.findBySlug("invalid-slug");
+        assertThat(found).isNotPresent();
     }
 }
