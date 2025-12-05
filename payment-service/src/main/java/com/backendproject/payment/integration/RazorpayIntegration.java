@@ -20,17 +20,15 @@ public class RazorpayIntegration {
         this.secretKey = secretKey;
     }
 
-    // expects amount, currency, and receiptId
     public Order createOrder(double amount, String currency, String receiptId) throws Exception {
         JSONObject orderRequest = new JSONObject();
-        orderRequest.put("amount", amount * 100); // in paise
+        orderRequest.put("amount", amount * 100);
         orderRequest.put("currency", currency);
         orderRequest.put("receipt", receiptId);
 
         return razorpayClient.orders.create(orderRequest);
     }
 
-    // expects orderId, paymentId, signature, secret
     public boolean verifySignature(String orderId, String paymentId, String signature, String secret) {
         try {
             String payload = orderId + "|" + paymentId;

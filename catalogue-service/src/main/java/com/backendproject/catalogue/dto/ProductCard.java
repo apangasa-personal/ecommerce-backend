@@ -2,7 +2,6 @@
 package com.backendproject.catalogue.dto;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 public record ProductCard(
         Long id,

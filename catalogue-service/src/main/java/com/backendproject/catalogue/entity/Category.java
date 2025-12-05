@@ -8,10 +8,6 @@ import lombok.experimental.SuperBuilder;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Represents a product category in the catalogue.
- * Each category can contain multiple products.
- */
 @Entity
 @Table(name = "category")
 @Getter

@@ -7,9 +7,6 @@ import lombok.experimental.SuperBuilder;
 
 import java.util.UUID;
 
-/**
- * Represents an item in a user's shopping cart.
- */
 @Entity
 @Table(
         name = "cart_item",
