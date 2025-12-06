@@ -1,4 +1,4 @@
-package com.backendproject.auth.service;
+package com.backendproject.auth.security;
 
 import com.backendproject.auth.entity.User;
 import com.backendproject.auth.repository.UserRepository;

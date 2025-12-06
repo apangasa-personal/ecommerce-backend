@@ -8,17 +8,17 @@ A modular **Spring Boot 3 + Spring Cloud** backend for an e-commerce platform bu
 
 ## Project Structure
 ecommerce-backend/ \
-├── discovery-server/ # Eureka service registry \
-├── auth-service/ # Authentication, JWT, and user management \
-├── catalogue-service/ # Product catalogue, categories, search \
-├── order-service/ # Orders, checkout, history \
-├── payment-service/ # Payment integration and tracking \
-├── shared-library/ # Common DTOs, models, and utilities \
+├── discovery-server/ Eureka service registry \
+├── auth-service/ Authentication, JWT, and user management \
+├── catalogue-service/ Product catalogue, categories, search \
+├── order-service/ Orders, checkout, history \
+├── payment-service/ Payment integration and tracking \
+├── shared-library/ Common DTOs, models, and utilities \
 
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|-------------|
@@ -33,7 +33,7 @@ ecommerce-backend/ \
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 All services register with **Eureka** (`discovery-server`), and communicate via logical service IDs.  
 Optionally, the **API Gateway** provides a single entry point with centralized JWT validation.
