@@ -8,3 +8,4 @@
 /auth-service/target/
 /payment-service/target/
 /order-service/target/
+/discovery-server/target/
