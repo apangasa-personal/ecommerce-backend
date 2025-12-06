@@ -7,3 +7,4 @@
 /shared-library/target/surefire-reports/
 /auth-service/target/
 /payment-service/target/
+/order-service/target/

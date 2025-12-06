@@ -9,12 +9,12 @@
     <artifactId>ecommerce-backend-final</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-
     <modules>
         <module>shared-library</module>
         <module>catalogue-service</module>
         <module>auth-service</module>
         <module>payment-service</module>
+        <module>order-service</module>
     </modules>
 
     <parent>
