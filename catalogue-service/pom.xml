@@ -6,9 +6,9 @@
     <!-- Link to parent -->
     <parent>
         <groupId>com.backendproject</groupId>
-        <artifactId>backend-project-final</artifactId>
+        <artifactId>ecommerce-backend-final</artifactId>  <!-- your root pom’s artifactId -->
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath> <!-- path to the parent pom -->
     </parent>
 
     <artifactId>catalogue-service</artifactId>
@@ -16,6 +16,11 @@
     <name>Catalogue Service</name>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
         <!-- Shared library -->
         <dependency>
             <groupId>com.backendproject</groupId>
